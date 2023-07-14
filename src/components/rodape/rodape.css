@@ -1,0 +1,31 @@
+.footer {
+    height: auto;
+    display: flex;
+    gap: 32px;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(245, 55, 55);
+}
+
+.footer-icones {
+    display: flex;
+    gap: 24px;
+    margin: 24px 0;
+}
+
+.footer-icones img {
+    width: 25px;
+    cursor: pointer;
+}
+
+.footer-imagem img{
+    width: 100px;
+    margin: 32px 0;
+}
+
+.footer-copy {
+    color: white;
+    font-weight: 700;
+    font-size: 12px;
+}
