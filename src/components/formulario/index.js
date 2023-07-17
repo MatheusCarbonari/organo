@@ -12,6 +12,8 @@ const Formulario = (props) => {
     const [classe, setClasse] = useState('')
     const [imagem, setImagem] = useState('')
     const [guilda, setGuilda] = useState('')
+    const [nomeGuilda, setNomeGuilda] = useState('')
+    const [corGuilda, setCorGuilda] = useState('')
 
     const aoSalvar = (evento) => {
         evento.preventDefault()
@@ -37,34 +39,39 @@ const Formulario = (props) => {
                 <h2>Preencha os dados para criar o card do Personagem de D&D</h2>
                 <CampoTexto 
                     obrigatorio={true} 
-                    label="Nome" 
+                    label="Nome"
+                    type="text"
                     placeholder="Digite o seu nome"
                     valor={nome}
                     aoAlterado={valor => setNome(valor)}
                 />
                 <CampoTexto 
                     obrigatorio={true} 
-                    label="Personagem" 
+                    label="Personagem"
+                    type="text"
                     placeholder="Digite o nome do seu personagem" 
                     valor={personagem}
                     aoAlterado={valor => setPersonagem(valor)}
                 />
                 <CampoTexto 
                     obrigatorio={true} 
-                    label="Raça" 
+                    label="Raça"
+                    type="text"
                     placeholder="Digite a raça do seu personagem" 
                     valor={raca}
                     aoAlterado={valor => setRaca(valor)}
                 />
                 <CampoTexto 
                     obrigatorio={true} 
-                    label="Classe" 
+                    label="Classe"
+                    type="text"
                     placeholder="Digite a classe do seu personagem" 
                     valor={classe}
                     aoAlterado={valor => setClasse(valor)}
                 />
                 <CampoTexto 
-                    label="Imagem" 
+                    label="Imagem"
+                    type="text"
                     placeholder="Digite o endereço da imagem"
                     valor={imagem}
                     aoAlterado={valor => setImagem(valor)}
@@ -78,6 +85,33 @@ const Formulario = (props) => {
                 />
                 <Botao>
                     Criar Card
+                </Botao>
+            </form>
+            <form onSubmit={(evento) => {
+                evento.preventDefault()
+                props.cadastrarGuilda({nome: nomeGuilda, cor: corGuilda})
+                setNomeGuilda('')
+                setCorGuilda('')
+            }}>
+                <h2>Preencha os dados para criar uma nova Guilda</h2>
+                <CampoTexto 
+                    obrigatorio
+                    type="text"
+                    label="Nome" 
+                    placeholder="Digite o nome da guilda"
+                    valor={nomeGuilda}
+                    aoAlterado={valor => setNomeGuilda(valor)}
+                />
+                <CampoTexto 
+                    obrigatorio
+                    type="color"
+                    label="Cor" 
+                    placeholder="Digite a cor do time" 
+                    valor={corGuilda}
+                    aoAlterado={valor => setCorGuilda(valor)}
+                />
+                <Botao>
+                    Criar Guilda
                 </Botao>
             </form>
         </section>

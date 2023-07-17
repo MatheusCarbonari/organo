@@ -9,7 +9,7 @@ const Rodape = () => {
                 <img src='/img/fb.png' alt='logo facebook'/>
             </div>
             <div className='footer-imagem'>
-                <img src='/img/logo.png' alt='logo organo'/>
+                <img src='/img/Dungeons&Dragons-Logo.png' alt='logo organo'/>
             </div>
             <div className='footer-copy'>
                 &copy;2023 Desenvolvido por Matheus
